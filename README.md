@@ -8,8 +8,9 @@ Projeto vagrant para provisionamento de ambiente com as seguintes ferramentas Ap
 * Solr 7.2.1
 
 # Requisitos
-* Virtual Box 5.2.6+   https://download.virtualbox.org/virtualbox/5.2.6/
-* Vagrant 2.0.1+       https://www.vagrantup.com/downloads.html
+* Virtual Box 5.2.6+   	https://download.virtualbox.org/virtualbox/5.2.6/
+* Vagrant 2.0.1+       	https://www.vagrantup.com/downloads.html
+* Putty					https://www.putty.org/
 
 # Instalação 
 Após executar o clone do repositório, será necessário fazer download dos instaladores e arquivos de dados para o diretório */resources*.  
@@ -32,4 +33,20 @@ http://localhost:8088       #yarn
 http://localhost:8983       #solr
 http://localhost:4040       #spark
 http://localhost:50070      #hadoop
+```
+
+# Acessando a VM
+Use o putty  para acessar a vm via ssh com os dados abaixo:
+```
+ip: 		localhost
+porta:		2222
+usuário:	vagrant
+senha:		vagrant
+```
+
+# Salvando o estado atual da VM
+É recomendado após a instalação da VM realizar um snapshot da mesma, para que qualquer alteração feita que venha a causar algum problema possa ser facilmente contornada.
+Dentro do terminal, powershell, etc. 
+```
+vagrant snapshot save [nome_do_snapshot]
 ```
