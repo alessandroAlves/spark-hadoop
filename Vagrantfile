@@ -32,8 +32,11 @@ Vagrant.configure("2") do |config|
 		sudo su
 				
 		#opcional - Necessita conexão com a internet
-		yum -y update
-		yum -y install vim #https://simpletutorials.com/c/1238/Simple+Vim+Reference
+		yum -y update 
+		yum -y install kernel-headers kernel-devel
+		
+		#opcional - https://simpletutorials.com/c/1238/Simple+Vim+Reference
+		yum -y install vim 
 		cp /vagrant/resources/config/.vimrc /root/.vimrc 
 		
 		sh /vagrant/scripts/01.install_java.sh

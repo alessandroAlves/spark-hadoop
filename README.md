@@ -12,6 +12,13 @@ Projeto vagrant para provisionamento de ambiente com as seguintes ferramentas Ap
 * Vagrant 2.0.1+       	https://www.vagrantup.com/downloads.html
 * Putty					https://www.putty.org/
 
+# Vagrant vbguest
+Após a instalação do vagrant, acesse seu terminal e instale o plugin vbguest, que irá evitar que erros de montagem aconteçam no ambiente
+```
+vagrant plugin install vagrant-vbguest
+vagrant vbguest
+```
+
 # Instalação 
 Após executar o clone do repositório, será necessário fazer download dos instaladores e arquivos de dados para o diretório */resources*.  
 
