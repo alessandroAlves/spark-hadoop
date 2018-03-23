@@ -24,7 +24,7 @@ Vagrant.configure("2") do |config|
 	config.vm.network "forwarded_port", guest: 50070, host: 50070   #hadoop
 	
 	config.vm.provider "virtualbox" do |vb|
-		vb.memory = "6144"
+		vb.memory = "4096"
 	end
   
 	config.vm.provision "shell", inline: <<-SHELL
@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
 		sh /vagrant/scripts/04.install_solr.sh
 		sh /vagrant/scripts/05.common.sh
 
-		. ~/.bashrc
+		. /etc/profile
 		
 		#iniciando os serviços
 		sh /vagrant/scripts/start_services.sh
