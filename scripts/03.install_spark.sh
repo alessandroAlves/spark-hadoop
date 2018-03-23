@@ -12,3 +12,4 @@ export PATH=/opt/spark/bin:/opt/spark/sbin:${PATH}
 
 yes | cp /vagrant/resources/config/spark-defaults.conf $SPARK_HOME/conf
 
+echo "Spark Ok!" 

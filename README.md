@@ -56,3 +56,9 @@ Dentro do terminal, powershell, etc... faça
 ```
 vagrant snapshot save [nome_do_snapshot]
 ```
+
+# Deletando a VM
+Dentro do terminal, powershell, etc.. faça
+```
+vagrant destroy
+```

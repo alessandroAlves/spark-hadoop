@@ -6,7 +6,8 @@ echo " ... "
 #Start/Stop scripts
 cd /opt/
 mkdir scripts
-cp /vagrant/scripts/*_all.sh /opt/scripts/
+cp /vagrant/scripts/*_services.sh /opt/scripts/
+chown -R vagrant:vagrant /opt/scripts
 
 #Salvando variáveis
 #java
