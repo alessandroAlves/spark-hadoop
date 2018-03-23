@@ -44,9 +44,15 @@ usuário:	vagrant
 senha:		vagrant
 ```
 
+# Desligando a VM 
+Dentro do terminal, powershell, etc.. faça
+```
+vagrant halt
+```
+
 # Salvando o estado atual da VM
 É recomendado após a instalação da VM realizar um snapshot da mesma, para que qualquer alteração feita que venha a causar algum problema possa ser facilmente contornada.
-Dentro do terminal, powershell, etc. 
+Dentro do terminal, powershell, etc... faça
 ```
 vagrant snapshot save [nome_do_snapshot]
 ```
