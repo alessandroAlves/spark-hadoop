@@ -424,10 +424,11 @@
                       and initialSize parameters are ignored.
       -->
     <filterCache class="solr.FastLRUCache"
-                 size="512"
-                 initialSize="512"
-                 autowarmCount="0"/>
-
+                 size="256"
+                 initialSize="256"
+                 autowarmCount="0"
+				 maxRamMB="400"/>
+				 
     <!-- Query Result Cache
 
          Caches results of searches - ordered lists of document ids
@@ -437,10 +438,10 @@
                        to occupy
       -->
     <queryResultCache class="solr.LRUCache"
-                      size="512"
-                      initialSize="512"
-                      autowarmCount="0"/>
-
+                      size="256"
+                      initialSize="256"
+                      autowarmCount="0"
+					  maxRamMB="400"/>
     <!-- Document Cache
 
          Caches Lucene Document objects (the stored fields for each
@@ -448,9 +449,10 @@
          this cache will not be autowarmed.
       -->
     <documentCache class="solr.LRUCache"
-                   size="512"
-                   initialSize="512"
-                   autowarmCount="0"/>
+                   size="256"
+                   initialSize="256"
+                   autowarmCount="0"
+				   maxRamMB="400"/>
 
     <!-- custom cache currently used by block join -->
     <cache name="perSegFilter"

@@ -21,6 +21,10 @@ echo "export HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop" >> /etc/profile
 #spark
 echo "export SPARK_HOME=/opt/spark" >> /etc/profile 
 
+#solr/bin
+echo "export SOLR_HOME=/opt/solr" >> /etc/profile
+echo "export SOLR_CONF_DIR=/opt/solr/server/solr/configsets/_default/conf" >> /etc/profile
+
 #path
 echo "export PATH=/opt/solr/bin:/opt/scripts:/opt/spark/bin:/opt/spark/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:${PATH}" >> /etc/profile 
 
