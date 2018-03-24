@@ -3,12 +3,6 @@
 echo " 5 - Configurações do sistema"
 echo " ... "
 
-#Start/Stop scripts
-cd /opt/
-mkdir scripts
-cp /vagrant/scripts/*_services.sh /opt/scripts/
-chown -R vagrant:vagrant /opt/scripts
-
 #Salvando variáveis
 #java
 echo "export JAVA_HOME=/opt/jdk1.8.0_161/" >> ~/.bashrc
@@ -29,8 +23,12 @@ echo "export SOLR_CONF_DIR=/opt/solr/server/solr/configsets/_default/conf" >> ~/
 echo "export PATH=/opt/solr/bin:/opt/scripts:/opt/spark/bin:/opt/spark/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:${PATH}" >> ~/.bashrc 
 runuser -l vagrant -c 'echo "export PATH=/opt/solr/bin:/opt/scripts:/opt/spark/bin:/opt/spark/sbin:/opt/hadoop/bin:/opt/hadoop/sbin:${PATH}" >> ~/.bashrc'
 
-#Adicionando serviços na inicialização do sistema
-echo "sleep 60s" >> /etc/rc.d/rc.local
-echo "start_services.sh" 
-chmod +x /etc/rc.d/rc.local
-chmod +x /vagrant/scripts/start_services.sh
+#Inicializando serviços com o sistema
+cd /opt/
+mkdir scripts
+cp /vagrant/scripts/spark-hadoop-solr.sh /opt/scripts/
+chown -R vagrant:vagrant /opt/scripts
+chmod +x /opt/scripts/spark-hadoop-solr.sh
+echo "/opt/scripts/spark-hadoop-solr.sh start" >> /etc/rc.local 
+
+ 

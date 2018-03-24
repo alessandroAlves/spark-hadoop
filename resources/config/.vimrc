@@ -2,7 +2,6 @@ syntax on
 set showmatch
 set textwidth=79
 set nowrap
-set mouse=a
 set nu
 set tabstop=4
 set sw=4

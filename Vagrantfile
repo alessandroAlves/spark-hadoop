@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
 	end
 	
 	config.vm.boot_timeout = 600
-	config.vm.box = "bento/centos-7.2"
+	config.vm.box = "bento/centos-7.4"
 	
 	config.vm.box_check_update = false
 	
@@ -45,10 +45,9 @@ Vagrant.configure("2") do |config|
 		sh /vagrant/scripts/04.install_solr.sh
 		sh /vagrant/scripts/05.common.sh
 
-		. /etc/profile
+		. ~/.bashrc
 		
-		#iniciando os serviços
-		sh /vagrant/scripts/start_services.sh
-		
+		#iniciando serviços
+		sh /opt/scrips/spark-hadoop-solr.sh start
 	SHELL
 end
