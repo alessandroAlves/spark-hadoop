@@ -22,7 +22,7 @@ vagrant vbguest
 # Instalação 
 Após executar o clone do repositório, será necessário fazer download dos instaladores e arquivos de dados para o diretório */resources*.  
 
-* Os instaladores estão disponíveis no link https://drive.google.com/open?id=1V7M7KF5gydQ73cZ6e3d8CALAGTZHi98t 
+* Os arquivos estão disponíveis no link https://drive.google.com/open?id=1V7M7KF5gydQ73cZ6e3d8CALAGTZHi98t 
 
 Ao final do download, cole os arquivos nos diretórios *installers* e *data*, assim como estão no Google Drive.
 

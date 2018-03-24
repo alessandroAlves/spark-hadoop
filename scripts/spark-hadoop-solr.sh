@@ -2,13 +2,13 @@
 
 function start {
 	echo "Starting Hadoop File System - HDFS ..."
-	start-dfs.sh 
+	/opt/hadoop/sbin/start-dfs.sh 
 
 	echo "Starting YARN ..."
-	start-yarn.sh 
+	/opt/hadoop/sbin/start-yarn.sh 
 
 	echo "Starting Spark History Server ..."
-	start-history-server.sh
+	/opt/spark/sbin/start-history-server.sh
 
 	echo "Starting Solr ..."
 	runuser -l vagrant -c '/opt/solr/bin/solr start -Dsolr.directoryFactory=HdfsDirectoryFactory -Dsolr.lock.type=hdfs -Dsolr.data.dir=hdfs://localhost:9000/solr -Dsolr.updatelog=hdfs://localhost:9000/solr -p 8983'
@@ -19,13 +19,13 @@ function stop {
 	runuser -l vagrant -c '/opt/solr/bin/solr stop -all'
 
 	echo "Stopping Spark History Server ..."
-	stop-history-server.sh
+	/opt/spark/sbin/stop-history-server.sh
 
 	echo "Stopping YARN ..."
-	stop-yarn.sh 
+	/opt/hadoop/sbin/stop-yarn.sh 
 
 	echo "Stopping Hadoop File System - HDFS ..."
-	stop-dfs.sh 
+	/opt/hadoop/sbin/stop-dfs.sh 
 }
 
 case "${1}" in

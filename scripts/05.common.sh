@@ -27,8 +27,8 @@ runuser -l vagrant -c 'echo "export PATH=/opt/solr/bin:/opt/scripts:/opt/spark/b
 cd /opt/
 mkdir scripts
 cp /vagrant/scripts/spark-hadoop-solr.sh /opt/scripts/
-chown -R vagrant:vagrant /opt/scripts
 chmod +x /opt/scripts/spark-hadoop-solr.sh
-echo "/opt/scripts/spark-hadoop-solr.sh start" >> /etc/rc.local 
+yes | cp /vagrant/resources/config/rc.local /etc 
+chmod +x /etc/rc.local
 
  

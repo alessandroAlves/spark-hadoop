@@ -48,6 +48,6 @@ Vagrant.configure("2") do |config|
 		. ~/.bashrc
 		
 		#iniciando serviços
-		sh /opt/scrips/spark-hadoop-solr.sh start
+		sh /opt/scripts/spark-hadoop-solr.sh start
 	SHELL
 end
