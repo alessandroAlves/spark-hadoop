@@ -31,19 +31,13 @@ Vagrant.configure("2") do |config|
 		
 		sudo su
 				
-		#opcional - Necessita conexão com a internet
-		yum -y update 
-		yum -y install kernel-headers kernel-devel
-		
-		#opcional - https://simpletutorials.com/c/1238/Simple+Vim+Reference
-		yum -y install vim 
-		cp /vagrant/resources/config/.vimrc /root/.vimrc 
-		
+		sh /vagrant/scripts/00.centos_start.sh		
 		sh /vagrant/scripts/01.install_java.sh
 		sh /vagrant/scripts/02.install_hadoop.sh 	
 		sh /vagrant/scripts/03.install_spark.sh		
 		sh /vagrant/scripts/04.install_solr.sh
 		sh /vagrant/scripts/05.common.sh
+		sh /vagrant/scripts/06.import_data.sh
 
 		. ~/.bashrc
 		

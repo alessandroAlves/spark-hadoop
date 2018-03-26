@@ -22,6 +22,7 @@ runuser -l vagrant -c '/opt/solr/bin/solr start -Dsolr.directoryFactory=HdfsDire
 /opt/hadoop/sbin/start-dfs.sh
 
 #Cria Collection
+sleep 90s
 runuser -l vagrant -c '/opt/solr/bin/solr create -c EleicoesCollection'
 
 #Derruba serviço do solr

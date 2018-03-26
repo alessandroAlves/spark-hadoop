@@ -11,6 +11,8 @@ function start {
 	/opt/spark/sbin/start-history-server.sh
 
 	echo "Starting Solr ..."
+	sleep 90s
+	hdfs dfs -rm -f /solr/index/write.lock
 	runuser -l vagrant -c '/opt/solr/bin/solr start -Dsolr.directoryFactory=HdfsDirectoryFactory -Dsolr.lock.type=hdfs -Dsolr.data.dir=hdfs://localhost:9000/solr -Dsolr.updatelog=hdfs://localhost:9000/solr -p 8983'
 }
 

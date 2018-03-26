@@ -1,4 +1,6 @@
 .vagrant/
+eleicoes/metastore_db/
+*.log
 *.zip
 *.tgz
 *.gz
