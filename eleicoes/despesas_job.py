@@ -72,17 +72,19 @@ def despesas_por_regiao(df):
 	result = df.groupBy('UF') \
 				.sum('Valor') \
 				.orderBy('sum(Valor)', ascending=False)
+	return result
 
 def despesas_por_cargo(df):
 	result = df.groupBy('Cargo') \
 				.sum('Valor') \
 				.orderBy('sum(Valor)', ascending=False)
+	return result
 
 def despesas_por_tipo(df):
 	result = df.groupBy('Tipo despesa') \
 				.sum('Valor') \
 				.orderBy('sum(Valor)', ascending=False)
-
+	return result
 
 #Start Script
 if __name__ == '__main__':
