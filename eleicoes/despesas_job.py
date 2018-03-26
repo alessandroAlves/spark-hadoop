@@ -58,7 +58,7 @@ def save_query(df, name):
 	df.write.format('com.databricks.spark.csv') \
   			.option('header', 'true') \
   			.option('delimiter', ',') \
-  			.save(query_path + '/' + name + '.csv')
+  			.save(query_path + '/' + name + '.csv', mode='overwrite')
 
 
 #QUERY'S  
