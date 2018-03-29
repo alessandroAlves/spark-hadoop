@@ -5,9 +5,9 @@ Projeto vagrant para provisionamento de ambiente com as seguintes ferramentas Ap
 
 * Spark 2.3.0 
 * Hadoop 2.7.5
-* Hive 1.2.2 
+* Hive 1.2.2 - *opcional*
 
-*Obs.:* O Apache Hive é instalado apenas para comparação ao spark nos jobs de mapreduce, caso não queira instalar esse componenete, comente a linha *43* no arquivo Vagrantfile
+**Obs.:** O Apache Hive é instalado apenas para comparação ao spark nos jobs de mapreduce, caso não queira instalar esse componenete, comente a linha **43** no arquivo Vagrantfile
 
 # Requisitos
 * Virtual Box 5.2.6+   	https://download.virtualbox.org/virtualbox/5.2.6/
