@@ -8,7 +8,7 @@ unzip -o '/vagrant/resources/data/*.zip'
 
 
 echo "Removendo arquivos desnecessários... "
-rm -f *.pdf *brasil.txt *sup.txt
+rm -f *.pdf *brasil.txt *sup.txt *elp.txt
 
 
 echo "Convertendo arquivos para UTF-8"
@@ -31,9 +31,8 @@ hdfs dfs -put /tmp/eleicoes_utf8/receitas* /user/root/eleicoes/receita
 hdfs dfs -put /tmp/eleicoes_utf8/despesas* /user/root/eleicoes/despesa
 
 
-
 echo "Limpando arquivos após importação"
 cd /root
-rm -rf /tmp/eleicoes /tmp/eleicoes_utf8
+#rm -rf /tmp/eleicoes /tmp/eleicoes_utf8
 
  

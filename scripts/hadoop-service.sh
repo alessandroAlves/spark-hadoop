@@ -9,17 +9,9 @@ function start {
 
 	echo "Starting Spark History Server ..."
 	/opt/spark/sbin/start-history-server.sh
-
-	echo "Starting Solr ..."
-	sleep 90s
-	hdfs dfs -rm -f /solr/index/write.lock
-	runuser -l vagrant -c '/opt/solr/bin/solr start -Dsolr.directoryFactory=HdfsDirectoryFactory -Dsolr.lock.type=hdfs -Dsolr.data.dir=hdfs://localhost:9000/solr -Dsolr.updatelog=hdfs://localhost:9000/solr -p 8983'
 }
 
 function stop {
-	echo "Stopping Solr ..."
-	runuser -l vagrant -c '/opt/solr/bin/solr stop -all'
-
 	echo "Stopping Spark History Server ..."
 	/opt/spark/sbin/stop-history-server.sh
 

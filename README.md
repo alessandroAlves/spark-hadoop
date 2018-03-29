@@ -5,7 +5,9 @@ Projeto vagrant para provisionamento de ambiente com as seguintes ferramentas Ap
 
 * Spark 2.3.0 
 * Hadoop 2.7.5
-* Solr 7.2.1
+* Hive 1.2.2 
+
+*Obs.:* O Apache Hive é instalado apenas para comparação ao spark nos jobs de mapreduce, caso não queira instalar esse componenete, comente a linha *43* no arquivo Vagrantfile
 
 # Requisitos
 * Virtual Box 5.2.6+   	https://download.virtualbox.org/virtualbox/5.2.6/
@@ -31,13 +33,20 @@ Agora inicie o terminal de sua preferência dentro do diretório *spark-hadoop-s
 ``` 
 $ vagrant up
 ```
+
+# Gerenciando os serviços
+Junto com a inicialização do sistema operacional, os serviços do haddop são iniciados. Mas caso queira pará-los, existe um script para facilitar essa tarefa
+De qualquer lugar do sistema, digite 
+```
+haddop-service {start | stop | restart}
+```
+
 # Acessando as aplicações
 
 No seu browser, utilize as seguintes uris
 
 ```
 http://localhost:8088       #yarn
-http://localhost:8983       #solr
 http://localhost:4040       #spark
 http://localhost:50070      #hadoop
 ```
@@ -69,3 +78,4 @@ Dentro do terminal, powershell, etc.. faça
 ```
 vagrant destroy
 ```
+

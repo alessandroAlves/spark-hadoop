@@ -16,32 +16,29 @@ Vagrant.configure("2") do |config|
 	
 	config.vm.network "private_network", ip: "192.168.33.10"
 	
-	config.vm.network "forwarded_port", guest: 8000, host: 8000  	#django
-	config.vm.network "forwarded_port", guest: 8983, host: 8983     #solr
-	config.vm.network "forwarded_port", guest: 8088, host: 8088   	#hadoop
+	config.vm.network "forwarded_port", guest: 8088, host: 8088   	#yarn
 	config.vm.network "forwarded_port", guest: 4040, host: 4040   	#spark
 	config.vm.network "forwarded_port", guest: 18080, host: 18080  	#spark-history
 	config.vm.network "forwarded_port", guest: 50070, host: 50070   #hadoop
 	
 	config.vm.provider "virtualbox" do |vb|
-		vb.memory = "5120"
+		vb.memory = "10240"
 	end
   
 	config.vm.provision "shell", inline: <<-SHELL
 		
 		sudo su
-				
-		sh /vagrant/scripts/00.centos_start.sh		
+
+		sh /vagrant/scripts/00.centos_start_conf.sh		
 		sh /vagrant/scripts/01.install_java.sh
 		sh /vagrant/scripts/02.install_hadoop.sh 	
 		sh /vagrant/scripts/03.install_spark.sh		
-		sh /vagrant/scripts/04.install_solr.sh
-		sh /vagrant/scripts/05.common.sh
-		sh /vagrant/scripts/06.import_data.sh
+		sh /vagrant/scripts/04.centos_final_conf.sh
+		sh /vagrant/scripts/05.import_data.sh
 
 		. ~/.bashrc
+
+		#sh /vagrant/scripts/99.install_hive.sh
 		
-		#iniciando serviços
-		sh /opt/scripts/spark-hadoop-solr.sh start
 	SHELL
 end

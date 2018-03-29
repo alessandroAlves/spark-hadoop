@@ -10,6 +10,6 @@
 # Please note that you must run 'chmod +x /etc/rc.d/rc.local' to ensure
 # that this script will be executed during boot.
 
-/opt/scripts/spark-hadoop-solr.sh start
+/opt/scripts/hadoop-service.sh start
 
 touch /var/lock/subsys/local
