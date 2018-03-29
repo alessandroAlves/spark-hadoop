@@ -1,4 +1,4 @@
-# Ambiente Vagrant para Spark, Hadoop e Solr
+# Ambiente Vagrant para Spark e Hadoop
 
 # Introdução 
 Projeto vagrant para provisionamento de ambiente com as seguintes ferramentas Apache:
