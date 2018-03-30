@@ -51,8 +51,8 @@ def start_spark(app_name):
 	return spark_session
 
 
-def to_value(string):
-	return float(string.replace(",","."))
+def to_value(val1):
+	return float(val1.replace(",","."))
 
 
 def save_query(df, name):

@@ -4,11 +4,11 @@ echo "Descompactando arquivos do TSE ... "
 cd /tmp
 mkdir eleicoes 
 cd eleicoes
-unzip -o '/vagrant/resources/data/*.zip'
+unzip -o '/vagrant/resources/data/*2014.zip'
 
 
 echo "Removendo arquivos desnecessários... "
-rm -f *.pdf *brasil.txt *sup.txt *elp.txt
+rm -f *.pdf *brasil.txt *sup.txt *elp.txt *comite* *partido* *receita* *votacao*
 
 
 echo "Convertendo arquivos para UTF-8"
@@ -33,6 +33,6 @@ hdfs dfs -put /tmp/eleicoes_utf8/despesas* /user/root/eleicoes/despesa
 
 echo "Limpando arquivos após importação"
 cd /root
-#rm -rf /tmp/eleicoes /tmp/eleicoes_utf8
+rm -rf /tmp/eleicoes /tmp/eleicoes_utf8
 
  

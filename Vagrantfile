@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
 	config.vm.network "forwarded_port", guest: 50070, host: 50070   #hadoop
 	
 	config.vm.provider "virtualbox" do |vb|
-		vb.memory = "10240"
+		vb.memory = "4096"
 	end
   
 	config.vm.provision "shell", inline: <<-SHELL
@@ -38,7 +38,7 @@ Vagrant.configure("2") do |config|
 
 		. ~/.bashrc
 
-		#sh /vagrant/scripts/99.install_hive.sh
+		sh /vagrant/scripts/99.install_hive.sh
 		
 	SHELL
 end

@@ -79,3 +79,10 @@ Dentro do terminal, powershell, etc.. faça
 vagrant destroy
 ```
 
+
+#OBS 
+Após o clone do repositório pelo github em ambiente **windows**, alguns scripts apresentam erro devido ao caractér de final de linha utilizado pelo windows. Para corrigir esse erro, use o sublime, ou notepad++ para converter o final de linha.
+Já estamos trabalhando na resolução desse bug. 
+
+
+*Enjoy*
