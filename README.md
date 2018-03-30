@@ -80,7 +80,7 @@ vagrant destroy
 ```
 
 
-#Bug List
+# Bug List
 
 * Carácter de Final de Linha (Somente em ambiente Windows)
 
