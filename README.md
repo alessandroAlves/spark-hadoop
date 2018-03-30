@@ -80,9 +80,12 @@ vagrant destroy
 ```
 
 
-#OBS 
+#Bug List
+
+* Carácter de Final de Linha (Somente em ambiente Windows)
+
 Após o clone do repositório pelo github em ambiente **windows**, alguns scripts apresentam erro devido ao caractér de final de linha utilizado pelo windows. Para corrigir esse erro, use o sublime, ou notepad++ para converter o final de linha.
-Já estamos trabalhando na resolução desse bug. 
+Já estamos trabalhando na resolução desse bug. Outra opção é fazer o download do zip ao invés do clone.
 
 
 *Enjoy*
