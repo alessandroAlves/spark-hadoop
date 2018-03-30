@@ -3,9 +3,12 @@
 
 Vagrant.configure("2") do |config|
 	
-	if Vagrant.has_plugin?("vagrant-proxyconf") && ENV['http_proxy']
-		config.proxy.http     = ENV['http_proxy'] 
-		config.proxy.https    = ENV['https_proxy']
+	# Caso esteja executando o vagrant em um ambiente com proxy, instale o plugin... 
+	# vagrant plugin install vagrant-proxyconf
+
+	if Vagrant.has_plugin?("vagrant-proxyconf")
+		config.proxy.http     = "proxy:port"
+		config.proxy.https    = "proxy:port"
 		config.proxy.no_proxy = "localhost,127.0.0.1"
 	end
 	
@@ -32,13 +35,12 @@ Vagrant.configure("2") do |config|
 		sh /vagrant/scripts/00.centos_start_conf.sh		
 		sh /vagrant/scripts/01.install_java.sh
 		sh /vagrant/scripts/02.install_hadoop.sh 	
-		sh /vagrant/scripts/03.install_spark.sh		
+		sh /vagrant/scripts/03.install_spark.sh	
 		sh /vagrant/scripts/04.centos_final_conf.sh
 		sh /vagrant/scripts/05.import_data.sh
+		sh /vagrant/scripts/99.install_hive.sh 			#comente caso não queira o hive
 
 		. ~/.bashrc
-
-		sh /vagrant/scripts/99.install_hive.sh
 		
 	SHELL
 end
