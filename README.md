@@ -7,7 +7,7 @@ Projeto vagrant para provisionamento de ambiente com as seguintes ferramentas Ap
 * Hadoop 2.7.5
 * Hive 1.2.2 - *opcional*
 
-**Obs.:** O Apache Hive é instalado apenas para comparação ao spark nos jobs de mapreduce, caso não queira instalar esse componenete, comente a linha **43** no arquivo Vagrantfile
+**Obs.:** O Apache Hive é instalado apenas para comparação ao spark nos jobs de mapreduce, caso não queira instalar esse componenete, comente a linha **41** no arquivo Vagrantfile
 
 # Requisitos
 * Virtual Box 5.2.6+   	https://download.virtualbox.org/virtualbox/5.2.6/
@@ -88,6 +88,3 @@ vagrant destroy
 
 Após o clone do repositório pelo github em ambiente **windows**, alguns scripts apresentam erro devido ao caractér de final de linha utilizado pelo windows. Para corrigir esse erro, use o sublime, ou notepad++ para converter o final de linha.
 Já estamos trabalhando na resolução desse bug. Outra opção é fazer o download do zip ao invés do clone.
-
-
-*Enjoy*
