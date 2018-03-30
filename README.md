@@ -79,6 +79,8 @@ Dentro do terminal, powershell, etc.. faça
 vagrant destroy
 ```
 
+# TO-DO
+* Automatizar a criação de tabela e job de exemplo no HIVE
 
 # Bug List
 
